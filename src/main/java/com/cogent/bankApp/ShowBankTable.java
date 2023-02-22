@@ -81,6 +81,10 @@ public class ShowBankTable extends HttpServlet{
 		rs.close();
 		stmt.close();
 		
+		out.println("<form action= \"BankApp.jsp\" method = \"post\">\r\n"
+				+ "	<input type = \"submit\" value = \"return\"/>	\r\n"
+				+ "</form>");
+		
 		}
 		catch (Exception e) {
 			e.printStackTrace();

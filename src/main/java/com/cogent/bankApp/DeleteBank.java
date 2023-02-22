@@ -44,7 +44,7 @@ public class DeleteBank extends HttpServlet{
 		
 		try {
 			String QUERY = "DELETE FROM employee WHERE empId = ?";
-            PreparedStatement pstmt = this.conn
+            PreparedStatement pstmt = conn
                    .prepareStatement(QUERY);
   
             pstmt.setInt(1, Integer.valueOf(request.getParameter("empId")));
@@ -52,8 +52,8 @@ public class DeleteBank extends HttpServlet{
             pstmt.executeUpdate();
   
             pstmt.close();
-            conn.close();
-           			response.sendRedirect(request.getContextPath()+"/MainBankInfo");
+            
+   			response.sendRedirect(request.getContextPath()+"/MainBankInfo");
             
         }
         catch (Exception e) {
@@ -61,6 +61,14 @@ public class DeleteBank extends HttpServlet{
         }
     }
 
+	public void destroy() {
+		try {
+			conn.close();
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 	
 	
 

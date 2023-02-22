@@ -13,7 +13,6 @@
 	<input type = "text" name = "empId"/>
 	<br/>
 	<input type = "submit"/>	
-	
 </form>
 <form action= "InsertBank" method = "post">
 	<p>	insert empId </p>
@@ -29,8 +28,8 @@
 	<br/><br/>
 	
 	<input type = "submit"/>		
-
 </form>
+
 
 </body>
 </html>
